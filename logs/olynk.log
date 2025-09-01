@@ -1,0 +1,269 @@
+2025-09-01 01:12:36,665 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:12:36,707 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.70.126.155:5000
+2025-09-01 01:12:36,709 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-01 01:12:36,709 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:12:37,617 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:12:37,621 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:12:37,636 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:12:38,322 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:12:38] "[33mGET /health HTTP/1.1[0m" 404 -
+2025-09-01 01:13:04,477 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:13:04,509 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.70.126.155:5000
+2025-09-01 01:13:04,509 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-01 01:13:04,511 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:13:05,571 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:13:05,592 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:13:05,596 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:17:16,392 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:17:16,423 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.70.126.155:5000
+2025-09-01 01:17:16,423 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-01 01:17:16,424 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:17:17,100 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:17:17,116 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:17:17,116 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:17:24,352 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:17:24] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-09-01 01:17:24,430 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:17:24] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-09-01 01:17:24,461 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:17:24] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-09-01 01:17:24,809 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:17:24] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-09-01 01:17:25,057 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:17:25] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-09-01 01:17:32,496 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:17:32] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-09-01 01:17:32,540 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:17:32] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-09-01 01:17:32,845 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:17:32] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-09-01 01:17:33,194 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:17:33] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-09-01 01:17:33,459 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:17:33] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-09-01 01:18:28,207 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:18:28] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-09-01 01:18:28,274 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:18:28] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-09-01 01:18:28,444 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:18:28] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-09-01 01:18:28,776 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:18:28] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-09-01 01:18:29,028 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:18:29] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-09-01 01:23:51,971 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\backend\\app.py', reloading
+2025-09-01 01:23:52,069 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:23:52,877 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:23:52,897 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:23:52,900 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:24:17,038 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\backend\\app.py', reloading
+2025-09-01 01:24:17,152 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:24:18,131 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:24:18,133 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:24:18,146 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:24:23,198 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\backend\\app.py', reloading
+2025-09-01 01:24:23,314 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:24:24,150 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:24:24,161 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:24:24,164 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:25:38,351 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:25:38] "[33mPOST /export/csv HTTP/1.1[0m" 404 -
+2025-09-01 01:25:39,090 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:25:39,105 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.70.126.155:5000
+2025-09-01 01:25:39,105 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-01 01:25:39,105 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:25:39,713 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:25:39,713 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:25:39,725 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:25:53,235 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:25:53] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-09-01 01:26:06,826 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\app.py', reloading
+2025-09-01 01:26:06,908 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:26:08,826 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 01:26:08,826 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:26:08,843 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:26:08,843 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:26:21,704 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 01:26:21,704 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:26:21,732 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.70.126.155:5000
+2025-09-01 01:26:21,732 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-01 01:26:21,732 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:26:22,409 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:26:22] "GET / HTTP/1.1" 200 -
+2025-09-01 01:26:23,484 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 01:26:23,484 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:26:23,504 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:26:23,504 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:28:40,975 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:28:40] "GET / HTTP/1.1" 200 -
+2025-09-01 01:30:06,650 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:30:06] "[31m[1mPOST /export/csv HTTP/1.1[0m" 400 -
+2025-09-01 01:30:57,413 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\backend\\app.py', reloading
+2025-09-01 01:30:57,715 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:30:59,911 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 01:30:59,916 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:30:59,930 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:30:59,933 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:32:00,179 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:32:00] "GET / HTTP/1.1" 200 -
+2025-09-01 01:32:00,218 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:32:00] "GET /health HTTP/1.1" 200 -
+2025-09-01 01:32:28,081 - app - INFO - CSV uploaded successfully: products, 10 rows, quality: 100
+2025-09-01 01:32:28,095 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:32:28] "POST /upload/products HTTP/1.1" 200 -
+2025-09-01 01:32:28,247 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:32:28] "GET /analytics HTTP/1.1" 200 -
+2025-09-01 01:32:28,413 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:32:28] "GET /insights HTTP/1.1" 200 -
+2025-09-01 01:32:37,831 - app - INFO - CSV uploaded successfully: orders, 20 rows, quality: 100
+2025-09-01 01:32:37,831 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:32:37] "POST /upload/orders HTTP/1.1" 200 -
+2025-09-01 01:32:38,156 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:32:38] "GET /analytics HTTP/1.1" 200 -
+2025-09-01 01:32:38,423 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:32:38] "GET /insights HTTP/1.1" 200 -
+2025-09-01 01:33:13,328 - app - INFO - CSV uploaded successfully: customers, 15 rows, quality: 100
+2025-09-01 01:33:13,328 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:33:13] "POST /upload/customers HTTP/1.1" 200 -
+2025-09-01 01:33:13,659 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:33:13] "GET /analytics HTTP/1.1" 200 -
+2025-09-01 01:33:16,343 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:33:16] "GET /insights HTTP/1.1" 200 -
+2025-09-01 01:33:29,631 - app - INFO - CSV uploaded successfully: inventory, 20 rows, quality: 100
+2025-09-01 01:33:29,631 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:33:29] "POST /upload/inventory HTTP/1.1" 200 -
+2025-09-01 01:33:29,952 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:33:29] "GET /analytics HTTP/1.1" 200 -
+2025-09-01 01:33:30,311 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:33:30] "GET /insights HTTP/1.1" 200 -
+2025-09-01 01:33:40,880 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:33:40] "POST /advanced-analysis/trends HTTP/1.1" 200 -
+2025-09-01 01:33:45,273 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:33:45] "POST /charts/customers HTTP/1.1" 200 -
+2025-09-01 01:36:02,907 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\test_export.py', reloading
+2025-09-01 01:36:03,152 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:36:05,096 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 01:36:05,096 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:36:05,112 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:36:05,112 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:36:17,895 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:36:17] "GET / HTTP/1.1" 200 -
+2025-09-01 01:36:19,949 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:36:19] "[31m[1mPOST /export/csv HTTP/1.1[0m" 400 -
+2025-09-01 01:36:22,014 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:36:22] "POST /export/pdf HTTP/1.1" 200 -
+2025-09-01 01:36:28,036 - app - ERROR - Error creating Excel: At least one sheet must be visible
+2025-09-01 01:36:28,036 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:36:28] "[35m[1mPOST /export/excel HTTP/1.1[0m" 500 -
+2025-09-01 01:36:30,071 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:36:30] "[31m[1mPOST /export/invalid HTTP/1.1[0m" 400 -
+2025-09-01 01:38:37,384 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:38:37] "[31m[1mPOST /export/csv HTTP/1.1[0m" 400 -
+2025-09-01 01:41:04,157 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\test_export.py', reloading
+2025-09-01 01:41:04,407 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:41:23,100 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 01:41:23,100 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:41:23,115 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:41:23,128 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:41:29,728 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:41:29] "GET / HTTP/1.1" 200 -
+2025-09-01 01:41:29,839 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:41:29] "GET /health HTTP/1.1" 200 -
+2025-09-01 01:41:39,111 - app - INFO - CSV uploaded successfully: products, 10 rows, quality: 100
+2025-09-01 01:41:39,111 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:41:39] "POST /upload/products HTTP/1.1" 200 -
+2025-09-01 01:41:39,447 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:41:39] "GET /analytics HTTP/1.1" 200 -
+2025-09-01 01:41:39,697 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:41:39] "GET /insights HTTP/1.1" 200 -
+2025-09-01 01:41:48,482 - app - INFO - CSV uploaded successfully: orders, 20 rows, quality: 100
+2025-09-01 01:41:48,482 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:41:48] "POST /upload/orders HTTP/1.1" 200 -
+2025-09-01 01:41:48,796 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:41:48] "GET /analytics HTTP/1.1" 200 -
+2025-09-01 01:41:49,049 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:41:49] "GET /insights HTTP/1.1" 200 -
+2025-09-01 01:42:07,467 - app - INFO - CSV uploaded successfully: customers, 15 rows, quality: 100
+2025-09-01 01:42:07,467 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:42:07] "POST /upload/customers HTTP/1.1" 200 -
+2025-09-01 01:42:07,797 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:42:07] "GET /analytics HTTP/1.1" 200 -
+2025-09-01 01:42:10,005 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:42:10] "GET /insights HTTP/1.1" 200 -
+2025-09-01 01:42:19,715 - app - INFO - CSV uploaded successfully: inventory, 20 rows, quality: 100
+2025-09-01 01:42:19,717 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:42:19] "POST /upload/inventory HTTP/1.1" 200 -
+2025-09-01 01:42:20,028 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:42:20] "GET /analytics HTTP/1.1" 200 -
+2025-09-01 01:42:20,394 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:42:20] "GET /insights HTTP/1.1" 200 -
+2025-09-01 01:42:27,791 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:42:27] "POST /export/pdf HTTP/1.1" 200 -
+2025-09-01 01:43:10,051 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:43:10] "POST /charts/revenue HTTP/1.1" 200 -
+2025-09-01 01:43:14,083 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:43:14] "POST /export/pdf HTTP/1.1" 200 -
+2025-09-01 01:44:19,189 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:44:19] "[31m[1mPOST /chatbot HTTP/1.1[0m" 400 -
+2025-09-01 01:46:26,499 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\backend\\app.py', reloading
+2025-09-01 01:46:26,823 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:54:30,533 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 01:54:30,534 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:54:30,551 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.70.126.155:5000
+2025-09-01 01:54:30,551 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-01 01:54:30,551 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:54:32,467 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 01:54:32,467 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:54:32,483 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:54:32,484 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:54:32,501 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:54:32] "GET / HTTP/1.1" 200 -
+2025-09-01 01:57:07,571 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 01:57:07,571 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:57:07,598 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.70.126.155:5000
+2025-09-01 01:57:07,612 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-01 01:57:07,614 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 01:57:09,548 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 01:57:09,548 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 01:57:09,567 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 01:57:09,575 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 01:57:12,697 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:57:12] "GET / HTTP/1.1" 200 -
+2025-09-01 01:57:12,757 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:57:12] "GET /health HTTP/1.1" 200 -
+2025-09-01 01:57:22,814 - app - INFO - CSV uploaded successfully: products, 10 rows, quality: 100
+2025-09-01 01:57:22,814 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:57:22] "POST /upload/products HTTP/1.1" 200 -
+2025-09-01 01:57:23,046 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:57:23] "GET /analytics HTTP/1.1" 200 -
+2025-09-01 01:57:23,146 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:57:23] "GET /insights HTTP/1.1" 200 -
+2025-09-01 01:57:34,963 - app - INFO - CSV uploaded successfully: orders, 20 rows, quality: 100
+2025-09-01 01:57:34,966 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:57:34] "POST /upload/orders HTTP/1.1" 200 -
+2025-09-01 01:57:35,197 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:57:35] "GET /analytics HTTP/1.1" 200 -
+2025-09-01 01:57:35,283 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:57:35] "GET /insights HTTP/1.1" 200 -
+2025-09-01 01:57:48,035 - app - INFO - CSV uploaded successfully: customers, 15 rows, quality: 100
+2025-09-01 01:57:48,037 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:57:48] "POST /upload/customers HTTP/1.1" 200 -
+2025-09-01 01:57:48,272 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:57:48] "GET /analytics HTTP/1.1" 200 -
+2025-09-01 01:57:50,196 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:57:50] "GET /insights HTTP/1.1" 200 -
+2025-09-01 01:58:00,260 - app - INFO - CSV uploaded successfully: inventory, 20 rows, quality: 100
+2025-09-01 01:58:00,263 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:58:00] "POST /upload/inventory HTTP/1.1" 200 -
+2025-09-01 01:58:00,496 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:58:00] "GET /analytics HTTP/1.1" 200 -
+2025-09-01 01:58:00,689 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:58:00] "GET /insights HTTP/1.1" 200 -
+2025-09-01 01:58:06,326 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-01 01:58:06,342 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-01 01:58:08,651 - app - ERROR - Error generating insights for PDF: 'InsightsGenerator' object has no attribute 'generate_insights'
+2025-09-01 01:58:09,354 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:58:09] "POST /export/pdf HTTP/1.1" 200 -
+2025-09-01 01:58:09,756 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-01 01:58:09,761 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-01 01:58:10,011 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-01 01:58:10,016 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-09-01 01:58:13,646 - app - ERROR - Error generating insights for PDF: 'InsightsGenerator' object has no attribute 'generate_insights'
+2025-09-01 01:58:14,044 - app - ERROR - Error generating insights for PDF: 'InsightsGenerator' object has no attribute 'generate_insights'
+2025-09-01 01:58:14,388 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:58:14] "POST /export/pdf HTTP/1.1" 200 -
+2025-09-01 01:58:14,728 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:58:14] "POST /export/pdf HTTP/1.1" 200 -
+2025-09-01 01:58:38,496 - app - ERROR - Error generating insights for Excel: 'InsightsGenerator' object has no attribute 'generate_insights'
+2025-09-01 01:58:38,766 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:58:38] "POST /export/excel HTTP/1.1" 200 -
+2025-09-01 01:58:52,492 - app - ERROR - Error generating insights for Excel: 'InsightsGenerator' object has no attribute 'generate_insights'
+2025-09-01 01:58:52,692 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:58:52] "POST /export/excel HTTP/1.1" 200 -
+2025-09-01 01:59:13,480 - werkzeug - INFO - 127.0.0.1 - - [01/Sep/2025 01:59:13] "POST /export/csv HTTP/1.1" 200 -
+2025-09-01 02:13:53,188 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\backend\\supabase_config.py', reloading
+2025-09-01 02:13:53,442 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 02:13:55,354 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 02:13:55,357 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 02:13:55,357 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 02:13:55,370 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 02:14:31,682 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\backend\\app.py', reloading
+2025-09-01 02:14:31,928 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 02:14:35,878 - root - INFO - Supabase client initialized successfully
+2025-09-01 02:14:35,878 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 02:14:35,878 - root - INFO - Supabase integration loaded successfully!
+2025-09-01 02:14:35,878 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 02:14:35,896 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 02:14:35,896 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 02:14:47,015 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\backend\\app.py', reloading
+2025-09-01 02:14:47,283 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 02:14:49,921 - root - INFO - Supabase client initialized successfully
+2025-09-01 02:14:49,921 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 02:14:49,921 - root - INFO - Supabase integration loaded successfully!
+2025-09-01 02:14:49,927 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 02:14:49,939 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 02:14:49,944 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 02:15:05,099 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\backend\\app.py', reloading
+2025-09-01 02:15:05,439 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 02:15:08,003 - root - INFO - Supabase client initialized successfully
+2025-09-01 02:15:08,003 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 02:15:08,003 - root - INFO - Supabase integration loaded successfully!
+2025-09-01 02:15:08,003 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 02:15:08,017 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 02:15:08,017 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 02:15:26,177 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\test_supabase.py', reloading
+2025-09-01 02:15:26,450 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 02:15:29,002 - root - INFO - Supabase client initialized successfully
+2025-09-01 02:15:29,018 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 02:15:29,018 - root - INFO - Supabase integration loaded successfully!
+2025-09-01 02:15:29,020 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 02:15:29,027 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 02:15:29,040 - werkzeug - INFO -  * Debugger PIN: 750-008-766
+2025-09-01 02:16:10,354 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Arya\\Desktop\\New Olynk\\backend\\app.py', reloading
+2025-09-01 02:16:10,631 - werkzeug - INFO -  * Restarting with stat
+2025-09-01 02:16:13,284 - root - INFO - Supabase client initialized successfully
+2025-09-01 02:16:13,285 - root - INFO - Phase 2 modules loaded successfully!
+2025-09-01 02:16:13,285 - root - INFO - Supabase integration loaded successfully!
+2025-09-01 02:16:13,289 - __main__ - INFO - Phase 3 modules loaded successfully!
+2025-09-01 02:16:13,291 - werkzeug - WARNING -  * Debugger is active!
+2025-09-01 02:16:13,291 - werkzeug - INFO -  * Debugger PIN: 750-008-766

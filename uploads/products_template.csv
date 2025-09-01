@@ -1,0 +1,11 @@
+Product ID,Product Name,Category,Brand,Price,Cost,SKU,Stock Quantity,Weight (g),Dimensions (cm),Launch Date,Last Updated,Tags,Description,Status
+PROD-001,Premium Cotton T-Shirt,Apparel,OLynk Brand,29.99,15.50,TSH-001,150,200,30x20x2,2024-01-15,2024-12-01,Premium,Cotton,Active
+PROD-002,Smart Fitness Band,Electronics,FitTech,89.99,45.00,FIT-001,75,50,2x1x0.5,2024-02-01,2024-12-01,Smart,Technology,Active
+PROD-003,Organic Face Cream,Beauty,NaturalCare,24.99,12.00,BEA-001,200,100,5x5x5,2024-01-20,2024-12-01,Organic,Natural,Active
+PROD-004,Leather Wallet,Accessories,LeatherCraft,39.99,20.00,ACC-001,100,80,12x9x2,2024-02-15,2024-12-01,Premium,Leather,Active
+PROD-005,Wireless Headphones,Electronics,AudioTech,129.99,65.00,AUD-001,50,150,15x8x4,2024-03-01,2024-12-01,Wireless,Technology,Active
+PROD-006,Yoga Mat,Health,WellnessPro,34.99,18.00,HEA-001,120,500,180x60x0.5,2024-01-10,2024-12-01,Yoga,Wellness,Active
+PROD-007,Coffee Maker,Home,KitchenPro,79.99,40.00,HOM-001,30,2000,25x35x30,2024-02-20,2024-12-01,Kitchen,Home,Active
+PROD-008,Phone Case,Electronics,PhoneGuard,19.99,8.00,PHN-001,300,30,15x8x2,2024-01-05,2024-12-01,Protection,Phone,Active
+PROD-009,Plant Pot,Home,GardenCo,14.99,7.50,GAR-001,80,400,20x20x25,2024-01-25,2024-12-01,Garden,Home,Active
+PROD-010,Notebook Set,Office,PaperCo,12.99,6.00,OFF-001,250,150,21x15x2,2024-01-30,2024-12-01,Office,Paper,Active

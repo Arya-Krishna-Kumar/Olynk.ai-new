@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLynk AI - CSV Insights Platform (Phase 2)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 1400px;
+        }
+        
+        .header-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+        }
+        
+        .phase-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            background: rgba(102, 126, 234, 0.05);
+            transition: all 0.3s ease;
+            margin: 20px 0;
+        }
+        
+        .upload-area:hover {
+            border-color: #764ba2;
+            background: rgba(118, 75, 162, 0.05);
+        }
+        
+        .upload-area.dragover {
+            border-color: #764ba2;
+            background: rgba(118, 75, 162, 0.1);
+            transform: scale(1.02);
+        }
+        
+        .file-type-selector {
+            margin: 20px 0;
+        }
+        
+        .template-downloads {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .template-btn {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .template-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .progress-container {
+            margin: 20px 0;
+            display: none;
+        }
+        
+        .upload-status {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .quality-score {
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .quality-score.excellent { background: #28a745; }
+        .quality-score.good { background: #20c997; }
+        .quality-score.fair { background: #ffc107; color: #212529; }
+        .quality-score.poor { background: #dc3545; }
+        
+        .dashboard-section {
+            display: none;
+            padding: 30px;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 15px 0;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .insight-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .insights-container {
+            max-height: 400px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .insights-container.expanded {
+            max-height: none;
+        }
+        
+        .show-more-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .show-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        
+        .chart-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .advanced-features {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .ml-insight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .trend-indicator {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .trend-indicator.up {
+            background: #28a745;
+        }
+        
+        .trend-indicator.down {
+            background: #dc3545;
+        }
+        
+        .trend-indicator.stable {
+            background: #6c757d;
+        }
+        
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .chat-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .chat-messages {
+            max-height: 300px;
+            overflow-y: auto;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+        
+        .chat-input button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+        
+        .export-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .export-btn {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+        
+        .toast {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            margin-bottom: 10px;
+            min-width: 300px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .toast.error {
+            border-left-color: #dc3545;
+        }
+        
+        .toast.info {
+            border-left-color: #17a2b8;
+        }
+        
+        .toast.warning {
+            border-left-color: #ffc107;
+        }
+        
+        .toast-header {
+            padding: 10px 15px;
+            border-bottom: 1px solid #e9ecef;
+            font-weight: bold;
+        }
+        
+        .toast-body {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Toast Container for Notifications -->
+        <div class="toast-container" id="toastContainer"></div>
+        
+        <div class="main-container">
+            <!-- Header Section -->
+            <div class="header-section">
+                <div class="phase-badge">Phase 2</div>
+                <h1 class="display-4 fw-bold">OLynk AI</h1>
+                <p class="lead">CSV Insights Platform - AI-Powered Business Intelligence</p>
+                
+                <!-- New in Phase 2 Features -->
+                <div class="advanced-features">
+                    <h4>🚀 New in Phase 2</h4>
+                    <p class="mb-0">Advanced Analytics • ML-Powered Insights • Interactive Visualizations</p>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="container mt-4">
+                <div class="upload-area" id="uploadArea">
+                    <h3>📁 Upload Your CSV Files</h3>
+                    <p class="text-muted">Drag & drop files here or click to browse</p>
+                    <input type="file" id="fileInput" accept=".csv" multiple style="display: none;">
+                    <button class="btn btn-primary btn-lg" onclick="document.getElementById('fileInput').click()">
+                        Choose Files
+                    </button>
+                    
+                    <!-- Template Downloads -->
+                    <div class="template-downloads">
+                        <h5>📋 Download Shopify Templates</h5>
+                        <p class="text-muted">Get the correct format for your Shopify data</p>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#" class="template-btn w-100" onclick="downloadTemplate('products')">
+                                    📦 Products Template
+                                </a>
+                                <small class="text-muted d-block mt-2">Product catalog with variants, pricing, and metadata</small>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" class="template-btn w-100" onclick="downloadTemplate('orders')">
+                                    🛒 Orders Template
+                                </a>
+                                <small class="text-muted d-block mt-2">Customer orders with line items and financial data</small>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" class="template-btn w-100" onclick="downloadTemplate('customers')">
+                                    👥 Customers Template
+                                </a>
+                                <small class="text-muted d-block mt-2">Customer profiles and purchase history</small>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" class="template-btn w-100" onclick="downloadTemplate('inventory')">
+                                    📊 Inventory Template
+                                </a>
+                                <small class="text-muted d-block mt-2">Stock levels and warehouse management</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- File Type Selection -->
+                    <div class="file-type-selector" id="fileTypeSelector" style="display: none;">
+                        <h5>Select File Type:</h5>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="fileType" id="products" value="products">
+                            <label class="form-check-label" for="products">Products</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="fileType" id="orders" value="orders">
+                            <label class="form-check-label" for="orders">Orders</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="fileType" id="customers" value="customers">
+                            <label class="form-check-label" for="customers">Customers</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="fileType" id="inventory" value="inventory">
+                            <label class="form-check-label" for="inventory">Inventory</label>
+                        </div>
+                        <button class="btn btn-success mt-3" onclick="uploadFile()">Upload File</button>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                 role="progressbar" style="width: 0%" id="progressBar">0%</div>
+                        </div>
+                        <p class="mt-2" id="progressText">Preparing upload...</p>
+                    </div>
+                    
+                    <!-- Upload Status -->
+                    <div class="upload-status" id="uploadStatus"></div>
+                    
+                    <!-- File Upload Progress -->
+                    <div class="mt-4" id="fileProgress" style="display: none;">
+                        <h6>📁 File Upload Progress:</h6>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <div class="badge bg-secondary p-2 mb-2" id="productsBadge">📦 Products</div>
+                                    <div class="small text-muted">Not uploaded</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <div class="badge bg-secondary p-2 mb-2" id="ordersBadge">🛒 Orders</div>
+                                    <div class="small text-muted">Not uploaded</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <div class="badge bg-secondary p-2 mb-2" id="customersBadge">👥 Customers</div>
+                                    <div class="small text-muted">Not uploaded</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <div class="badge bg-secondary p-2 mb-2" id="inventoryBadge">📊 Inventory</div>
+                                    <div class="small text-muted">Not uploaded</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <span class="badge bg-info" id="uploadCount">0/4 files uploaded</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Supported File Types -->
+                    <div class="mt-4">
+                        <h6>📋 Supported File Types:</h6>
+                        <ul class="list-unstyled">
+                            <li>• <strong>Products:</strong> Product catalog with variants, pricing, and metadata</li>
+                            <li>• <strong>Orders:</strong> Customer orders with line items and financial data</li>
+                            <li>• <strong>Customers:</strong> Customer profiles and purchase history</li>
+                            <li>• <strong>Inventory:</strong> Stock levels and warehouse management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Section -->
+            <div class="dashboard-section" id="dashboardSection">
+                <div class="container">
+                    <!-- Key Metrics -->
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="metric-card">
+                                <h6>💰 Total Revenue</h6>
+                                <div class="metric-value" id="totalRevenue">₹0</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="metric-card">
+                                <h6>👥 Total Customers</h6>
+                                <div class="metric-value" id="totalCustomers">0</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="metric-card">
+                                <h6>📦 Total Products</h6>
+                                <div class="metric-value" id="totalProducts">0</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="metric-card">
+                                <h6>⚠️ Low Stock Items</h6>
+                                <div class="metric-value" id="lowStockItems">0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Quality Section -->
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="insight-card">
+                                <h5>📊 Data Quality Analysis</h5>
+                                <div id="dataQualityContent"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="insight-card">
+                                <h5>🔍 Data Issues Found</h5>
+                                <div id="dataIssuesContent"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Insights Section -->
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="insight-card">
+                                <h5>🧠 AI-Powered Insights</h5>
+                                <div class="insights-container" id="insightsContainer">
+                                    <div id="mainInsights"></div>
+                                </div>
+                                <button class="show-more-btn" id="showMoreBtn" onclick="toggleInsights()" style="display: none;">
+                                    Show More Insights
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Analytics (Phase 2) -->
+                    <div class="row mt-4" id="advancedAnalyticsSection" style="display: none;">
+                        <div class="col-12">
+                            <div class="advanced-features">
+                                <h5>🚀 Advanced Analytics (Phase 2)</h5>
+                                <p>Unlock ML-powered insights and predictive analytics</p>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <button class="btn btn-light btn-lg w-100 mb-2" onclick="runAdvancedAnalysis('trends')">
+                                            📈 Trend Analysis
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-light btn-lg w-100 mb-2" onclick="runAdvancedAnalysis('anomalies')">
+                                            ⚠️ Anomaly Detection
+                                        </button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-light btn-lg w-100 mb-2" onclick="runAdvancedAnalysis('correlations')">
+                                            🔗 Business Relationships
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Visualizations (Phase 2) -->
+                    <div class="row mt-4" id="visualizationsSection" style="display: none;">
+                        <div class="col-12">
+                            <div class="chart-container">
+                                <h5>📊 Interactive Visualizations (Phase 2)</h5>
+                                <p>Generate beautiful charts and graphs from your data</p>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <button class="btn btn-primary w-100 mb-2" onclick="generateChart('revenue', 'line')">
+                                            📈 Revenue Trend
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn btn-primary w-100 mb-2" onclick="generateChart('customers', 'segmentation')">
+                                            👥 Customer Segments
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn btn-primary w-100 mb-2" onclick="generateChart('inventory', 'status')">
+                                            📦 Inventory Status
+                                        </button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn btn-primary w-100 mb-2" onclick="generateChart('revenue', 'weekly')">
+                                            📅 Weekly Revenue
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="chartDisplay" class="mt-4"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chatbot Section -->
+                    <div class="row mt-4">
+                        <div class="col-md-8">
+                            <div class="chat-container">
+                                <h5>💬 Ask AI Assistant</h5>
+                                <div class="chat-messages" id="chatMessages">
+                                    <div class="text-muted">Ask me anything about your data!</div>
+                                </div>
+                                <div class="chat-input">
+                                    <input type="text" id="chatInput" placeholder="Ask a question..." onkeypress="if(event.key==='Enter') sendChat()">
+                                    <button onclick="sendChat()">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="export-section">
+                                <h5>📤 Export Options</h5>
+                                <button class="export-btn" onclick="exportData('pdf')">Export as PDF</button>
+                                <button class="export-btn" onclick="exportData('excel')">Export as Excel</button>
+                                <button class="export-btn" onclick="exportData('csv')">Export as CSV</button>
+                                                                 <p class="text-muted mt-2">Export charts, insights & visualizations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+                 let currentPhase = 1;
+         let uploadedFiles = {
+             products: false,
+             orders: false,
+             customers: false,
+             inventory: false
+         };
+         let insightsExpanded = false;
+
+        // Check application phase
+        async function checkApplicationPhase() {
+            try {
+                const response = await fetch('/health');
+                const data = await response.json();
+                currentPhase = data.phase === 'Phase 2' ? 2 : 1;
+                
+                if (currentPhase === 2) {
+                    document.getElementById('advancedAnalyticsSection').style.display = 'block';
+                    document.getElementById('visualizationsSection').style.display = 'block';
+                }
+            } catch (error) {
+                console.log('Running in Phase 1 mode');
+            }
+        }
+
+        // Download template function
+        function downloadTemplate(type) {
+            // Download template from backend
+            const link = document.createElement('a');
+            link.href = `/download-template/${type}`;
+            link.download = `${type}_template.csv`;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            
+            // Show downloading message
+            showMessage(`📥 Downloading ${type} template...`, 'info');
+            
+            // Trigger download
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show success message after a short delay
+            setTimeout(() => {
+                showMessage(`✅ ${type.charAt(0).toUpperCase() + type.slice(1)} template downloaded successfully!`, 'success');
+            }, 1000);
+        }
+
+        // Drag and drop functionality
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            handleFileSelect(files[0]);
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            handleFileSelect(e.target.files[0]);
+        });
+
+        function handleFileSelect(file) {
+            if (!file) return;
+            
+            if (!file.name.toLowerCase().endsWith('.csv')) {
+                showMessage('Please select a CSV file', 'error');
+                return;
+            }
+            
+            if (file.size > 50 * 1024 * 1024) { // 50MB limit
+                showMessage('File size must be less than 50MB', 'error');
+                return;
+            }
+            
+            showFileTypeSelector(file);
+        }
+
+        function showFileTypeSelector(file) {
+            document.getElementById('fileTypeSelector').style.display = 'block';
+            document.getElementById('fileTypeSelector').dataset.file = file.name;
+        }
+
+        async function uploadFile() {
+            const fileType = document.querySelector('input[name="fileType"]:checked')?.value;
+            if (!fileType) {
+                showMessage('Please select a file type', 'error');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            if (!file) {
+                showMessage('Please select a file first', 'error');
+                return;
+            }
+
+            // Show progress bar and file progress
+            document.getElementById('progressContainer').style.display = 'block';
+            document.getElementById('fileProgress').style.display = 'block';
+            document.getElementById('uploadStatus').style.display = 'none';
+            
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                // Simulate progress
+                simulateProgress();
+                
+                const response = await fetch(`/upload/${fileType}`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    // Update file progress
+                    updateFileProgress(fileType, true);
+                    
+                    showUploadStatus(`✅ Uploaded ${fileType} file successfully!`, 'success');
+                    showMessage(`Successfully uploaded ${fileType} file!`, 'success');
+                    
+                    // Load analytics and insights
+                    await loadAnalytics();
+                    await loadInsights();
+                    
+                    // Show dashboard
+                    document.getElementById('dashboardSection').style.display = 'block';
+                    
+                    // Hide progress
+                    setTimeout(() => {
+                        document.getElementById('progressContainer').style.display = 'none';
+                    }, 1000);
+                    
+                    // Check if all files are uploaded
+                    checkAllFilesUploaded();
+                    
+                    // Reset file input and hide selector
+                    resetFileInput();
+                    
+                } else {
+                    const error = await response.json();
+                    showUploadStatus(`❌ Error uploading ${fileType} file: ${error.error}`, 'error');
+                    showMessage(`Failed to upload ${fileType} file: ${error.error}`, 'error');
+                }
+            } catch (error) {
+                showUploadStatus(`❌ Error uploading ${fileType} file: ${error.message}`, 'error');
+                showMessage(`Error uploading ${fileType} file: ${error.message}`, 'error');
+            }
+        }
+
+        function simulateProgress() {
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            let progress = 0;
+            
+            const statusMessages = [
+                'Preparing file for upload...',
+                'Validating file format...',
+                'Processing CSV data...',
+                'Analyzing data structure...',
+                'Generating insights...',
+                'Almost done...'
+            ];
+            
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 90) progress = 90;
+                
+                progressBar.style.width = progress + '%';
+                progressBar.textContent = Math.round(progress) + '%';
+                
+                // Show different status messages based on progress
+                const messageIndex = Math.floor((progress / 100) * statusMessages.length);
+                progressText.textContent = statusMessages[Math.min(messageIndex, statusMessages.length - 1)];
+                
+                if (progress >= 90) {
+                    clearInterval(interval);
+                }
+            }, 300);
+        }
+
+        function showUploadStatus(message, type) {
+            const statusDiv = document.getElementById('uploadStatus');
+            statusDiv.textContent = message;
+            statusDiv.style.display = 'block';
+            statusDiv.className = `upload-status ${type === 'error' ? 'error-message' : 'success-message'}`;
+        }
+
+        async function loadAnalytics() {
+            try {
+                const response = await fetch('/analytics');
+                const data = await response.json();
+                
+                if (data.total_revenue !== undefined) {
+                    document.getElementById('totalRevenue').textContent = `₹${data.total_revenue.toLocaleString()}`;
+                }
+                if (data.total_customers !== undefined) {
+                    document.getElementById('totalCustomers').textContent = data.total_customers.toLocaleString();
+                }
+                if (data.total_products !== undefined) {
+                    document.getElementById('totalProducts').textContent = data.total_products.toLocaleString();
+                }
+                if (data.low_stock_items !== undefined) {
+                    document.getElementById('lowStockItems').textContent = data.low_stock_items.toLocaleString();
+                }
+                
+                // Display data quality information
+                if (data.quality_score !== undefined) {
+                    displayDataQuality(data);
+                }
+            } catch (error) {
+                console.error('Error loading analytics:', error);
+            }
+        }
+
+        function displayDataQuality(data) {
+            const qualityContent = document.getElementById('dataQualityContent');
+            const issuesContent = document.getElementById('dataIssuesContent');
+            
+            // Quality score
+            let qualityClass = 'excellent';
+            if (data.quality_score < 80) qualityClass = 'good';
+            if (data.quality_score < 60) qualityClass = 'fair';
+            if (data.quality_score < 40) qualityClass = 'poor';
+            
+            qualityContent.innerHTML = `
+                <div class="quality-score ${qualityClass}">
+                    Quality Score: ${data.quality_score}%
+                </div>
+                <div class="mt-3">
+                    <strong>Rows:</strong> ${data.total_rows || 'N/A'}<br>
+                    <strong>Columns:</strong> ${data.total_columns || 'N/A'}<br>
+                    <strong>File Size:</strong> ${data.file_size || 'N/A'}<br>
+                    <strong>Upload Time:</strong> ${new Date().toLocaleTimeString()}
+                </div>
+            `;
+            
+            // Data issues
+            if (data.issues && data.issues.length > 0) {
+                issuesContent.innerHTML = `
+                    <div class="alert alert-warning">
+                        <strong>⚠️ Issues Found:</strong>
+                        <ul class="mt-2 mb-0">
+                            ${data.issues.map(issue => `<li>${issue}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            } else {
+                issuesContent.innerHTML = `
+                    <div class="alert alert-success">
+                        <strong>✅ No Issues Found!</strong><br>
+                        Your data looks clean and ready for analysis.
+                    </div>
+                `;
+            }
+        }
+
+        async function loadInsights() {
+            try {
+                const response = await fetch('/insights');
+                const data = await response.json();
+                
+                if (data.insights && data.insights.length > 0) {
+                    displayInsights(data.insights);
+                }
+            } catch (error) {
+                console.error('Error loading insights:', error);
+            }
+        }
+
+        function displayInsights(insights) {
+            const container = document.getElementById('insightsContainer');
+            const mainInsightsDiv = document.getElementById('mainInsights');
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            
+            // Show first 5 insights
+            const mainInsights = insights.slice(0, 5);
+            const remainingInsights = insights.slice(5);
+            
+            mainInsightsDiv.innerHTML = mainInsights.map(insight => 
+                `<div class="mb-3">${insight}</div>`
+            ).join('');
+            
+            // Add remaining insights (hidden)
+            if (remainingInsights.length > 0) {
+                const hiddenDiv = document.createElement('div');
+                hiddenDiv.id = 'hiddenInsights';
+                hiddenDiv.style.display = 'none';
+                hiddenDiv.innerHTML = remainingInsights.map(insight => 
+                    `<div class="mb-3">${insight}</div>`
+                ).join('');
+                container.appendChild(hiddenDiv);
+                showMoreBtn.style.display = 'block';
+            }
+        }
+
+        function toggleInsights() {
+            const hiddenInsights = document.getElementById('hiddenInsights');
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            
+            if (hiddenInsights.style.display === 'none') {
+                hiddenInsights.style.display = 'block';
+                showMoreBtn.textContent = 'Show Less';
+                document.getElementById('insightsContainer').classList.add('expanded');
+            } else {
+                hiddenInsights.style.display = 'none';
+                showMoreBtn.textContent = 'Show More Insights';
+                document.getElementById('insightsContainer').classList.remove('expanded');
+            }
+        }
+
+        async function runAdvancedAnalysis(analysisType) {
+            try {
+                const response = await fetch(`/advanced-analysis/${analysisType}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    displayAdvancedAnalysisResults(data, analysisType);
+                } else {
+                    const errorData = await response.json();
+                    showMessage(`Error: ${errorData.error || 'Unknown error'}`, 'error');
+                }
+            } catch (error) {
+                showMessage(`Error: ${error.message}`, 'error');
+            }
+        }
+
+        function displayAdvancedAnalysisResults(data, analysisType) {
+            const container = document.getElementById('chartDisplay');
+            let html = `<h5>🔍 ${analysisType.charAt(0).toUpperCase() + analysisType.slice(1)} Analysis Results</h5>`;
+            
+            if (data.error) {
+                html += `<div class="alert alert-danger">${data.error}</div>`;
+            } else {
+                switch (analysisType) {
+                    case 'trends':
+                        html += `<div class="ml-insight">
+                            <strong>Trend Direction:</strong> ${data.trend_direction}<br>
+                            <strong>Trend Strength:</strong> ${data.trend_strength}<br>
+                            <strong>Growth Rate (7d):</strong> ${(data.growth_rate_7d * 100).toFixed(2)}%<br>
+                            <strong>Growth Rate (30d):</strong> ${(data.growth_rate_30d * 100).toFixed(2)}%
+                        </div>`;
+                        break;
+                    case 'anomalies':
+                        html += `<div class="ml-insight">
+                            <strong>Anomalies Found:</strong> ${data.anomaly_count}<br>
+                            <strong>Anomaly Percentage:</strong> ${(data.anomaly_percentage * 100).toFixed(1)}%
+                        </div>`;
+                        break;
+
+                    case 'correlations':
+                        html += `<div class="ml-insight">
+                            <strong>📊 Analysis Summary:</strong><br>
+                            • Analyzed ${data.variables_analyzed || 'N/A'} business metrics<br>
+                            • Found ${data.total_relationships || 0} meaningful relationships<br>
+                            • ${data.strong_correlations ? data.strong_correlations.length : 0} strong connections<br>
+                            • ${data.moderate_correlations ? data.moderate_correlations.length : 0} moderate connections
+                        </div>`;
+                        
+                        // Add business insights first (most important for entrepreneurs)
+                        if (data.business_insights && data.business_insights.length > 0) {
+                            html += `<div class="mt-3"><strong>💡 What This Means for Your Business:</strong><ul class="mt-2">`;
+                            data.business_insights.forEach(insight => {
+                                html += `<li>${insight}</li>`;
+                            });
+                            html += `</ul></div>`;
+                        }
+                        
+                        // Add recommendations
+                        if (data.recommendations && data.recommendations.length > 0) {
+                            html += `<div class="mt-3"><strong>🎯 Action Items:</strong><ul class="mt-2">`;
+                            data.recommendations.forEach(rec => {
+                                html += `<li>${rec}</li>`;
+                            });
+                            html += `</ul></div>`;
+                        }
+                        
+                        // Add simplified relationship details
+                        if (data.strong_correlations && data.strong_correlations.length > 0) {
+                            html += `<div class="mt-3"><strong>🔗 Key Business Connections:</strong><ul class="mt-2">`;
+                            data.strong_correlations.forEach(corr => {
+                                html += `<li><strong>${corr.variable1_display || corr.variable1}</strong> and <strong>${corr.variable2_display || corr.variable2}</strong> are closely related - ${corr.interpretation || 'This suggests a strong business relationship'}</li>`;
+                            });
+                            html += `</ul></div>`;
+                        }
+                        
+                        if (data.moderate_correlations && data.moderate_correlations.length > 0) {
+                            html += `<div class="mt-3"><strong>🔗 Secondary Business Connections:</strong><ul class="mt-2">`;
+                            data.moderate_correlations.forEach(corr => {
+                                html += `<li><strong>${corr.variable1_display || corr.variable1}</strong> and <strong>${corr.variable2_display || corr.variable2}</strong> have a moderate relationship - ${corr.interpretation || 'Worth monitoring for business insights'}</li>`;
+                            });
+                            html += `</ul></div>`;
+                        }
+                        break;
+                }
+            }
+            
+            container.innerHTML = html;
+        }
+
+        async function generateChart(type, chartType) {
+            try {
+                const response = await fetch(`/charts/${type}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chart_type: chartType })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    displayChart(data);
+                } else {
+                    showMessage(`Error generating ${type} chart`, 'error');
+                }
+            } catch (error) {
+                showMessage(`Error: ${error.message}`, 'error');
+            }
+        }
+
+        function displayChart(chartData) {
+            const container = document.getElementById('chartDisplay');
+            
+            if (chartData.error) {
+                container.innerHTML = `<div class="alert alert-danger">${chartData.error}</div>`;
+                return;
+            }
+            
+            let html = `<h5>📊 ${chartData.title}</h5>`;
+            html += `<img src="data:image/png;base64,${chartData.image}" class="chart-image" alt="${chartData.title}">`;
+            html += `<div class="mt-3">
+                <strong>Data Points:</strong> ${chartData.data_points}<br>
+                <strong>Total Revenue:</strong> ₹${chartData.total_revenue?.toLocaleString() || 'N/A'}
+            </div>`;
+            
+            container.innerHTML = html;
+        }
+
+        async function sendChat() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message
+            addChatMessage('You', message, 'user');
+            input.value = '';
+            
+            try {
+                const response = await fetch('/chatbot', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: message })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    addChatMessage('AI Assistant', data.response, 'ai');
+                } else {
+                    addChatMessage('AI Assistant', 'Sorry, I encountered an error.', 'error');
+                }
+            } catch (error) {
+                addChatMessage('AI Assistant', 'Sorry, I encountered an error.', 'error');
+            }
+        }
+
+        function addChatMessage(sender, message, type) {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `mb-2 ${type === 'user' ? 'text-end' : ''}`;
+            
+            const badgeClass = type === 'user' ? 'bg-primary' : type === 'error' ? 'bg-danger' : 'bg-success';
+            messageDiv.innerHTML = `
+                <span class="badge ${badgeClass} p-2">
+                    <strong>${sender}:</strong> ${message}
+                </span>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function exportData(format) {
+            showMessage(`Exporting data as ${format.toUpperCase()}...`, 'info');
+            
+            // Check if any data is available
+            const hasData = Object.values(uploadedFiles).some(file => file);
+            if (!hasData) {
+                showMessage('No data available for export. Please upload files first.', 'warning');
+                return;
+            }
+            
+            // Determine export type based on available data
+            let exportType = 'all';
+            const availableTypes = [];
+            if (uploadedFiles.products) availableTypes.push('products');
+            if (uploadedFiles.orders) availableTypes.push('orders');
+            if (uploadedFiles.customers) availableTypes.push('customers');
+            if (uploadedFiles.inventory) availableTypes.push('inventory');
+            
+            if (availableTypes.length === 1) {
+                exportType = availableTypes[0];
+            }
+            
+            fetch(`/export/${format}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    type: exportType
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.blob();
+                } else {
+                    return response.json().then(data => {
+                        throw new Error(data.error || 'Export failed');
+                    });
+                }
+            })
+            .then(blob => {
+                // Create download link
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `olynk_export_${exportType}_${new Date().toISOString().slice(0, 19).replace(/:/g, '-')}.${format}`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                
+                showMessage(`✅ Data exported successfully as ${format.toUpperCase()}!`, 'success');
+            })
+            .catch(error => {
+                console.error('Export error:', error);
+                showMessage(`❌ Export failed: ${error.message}`, 'error');
+            });
+        }
+
+        function showMessage(message, type = 'info') {
+            const toastContainer = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            
+            const icon = type === 'success' ? '✅' : type === 'error' ? '❌' : type === 'warning' ? '⚠️' : 'ℹ️';
+            const title = type === 'success' ? 'Success' : type === 'error' ? 'Error' : type === 'warning' ? 'Warning' : 'Info';
+            
+            toast.innerHTML = `
+                <div class="toast-header">
+                    ${icon} ${title}
+                </div>
+                <div class="toast-body">
+                    ${message}
+                </div>
+            `;
+            
+            toastContainer.appendChild(toast);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.parentNode.removeChild(toast);
+                }
+            }, 5000);
+            
+            // Add click to dismiss
+            toast.addEventListener('click', () => {
+                if (toast.parentNode) {
+                    toast.parentNode.removeChild(toast);
+                }
+            });
+        }
+
+                 function updateFileProgress(fileType, uploaded) {
+             const badge = document.getElementById(`${fileType}Badge`);
+             const statusDiv = badge.nextElementSibling;
+             
+             if (uploaded) {
+                 badge.className = 'badge bg-success p-2 mb-2';
+                 statusDiv.textContent = 'Uploaded';
+                 statusDiv.className = 'small text-success';
+                 uploadedFiles[fileType] = true; // Track uploaded file
+             } else {
+                 badge.className = 'badge bg-secondary p-2 mb-2';
+                 statusDiv.textContent = 'Not uploaded';
+                 statusDiv.className = 'small text-muted';
+                 uploadedFiles[fileType] = false; // Track uploaded file
+             }
+             
+             // Update count
+             const uploadedCount = Object.values(uploadedFiles).filter(Boolean).length;
+             document.getElementById('uploadCount').textContent = `${uploadedCount}/4 files uploaded`;
+         }
+
+                 function checkAllFilesUploaded() {
+             const uploadedCount = Object.values(uploadedFiles).filter(Boolean).length;
+             if (uploadedCount === 4) {
+                 showMessage('🎉 All files uploaded! Your dashboard is now complete.', 'success');
+             }
+         }
+
+        function resetFileInput() {
+            document.getElementById('fileInput').value = ''; // Clear file input
+            document.getElementById('fileTypeSelector').style.display = 'none'; // Hide selector
+            document.getElementById('fileTypeSelector').dataset.file = ''; // Clear file data attribute
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            checkApplicationPhase();
+        });
+    </script>
+</body>
+</html> 

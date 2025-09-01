@@ -1,0 +1,21 @@
+Order ID,Order Date,Customer ID,Customer Name,Product ID,Product Name,Quantity,Unit Price,Total Amount,Payment Method,Shipping Address,Order Status,Discount Amount,Tax Amount,Grand Total
+ORD-001,2024-01-15,CUST-001,John Smith,PROD-001,Premium Cotton T-Shirt,2,29.99,59.98,Credit Card,123 Main St,Delivered,5.00,2.40,57.38
+ORD-002,2024-01-18,CUST-002,Sarah Johnson,PROD-002,Smart Fitness Band,1,89.99,89.99,PayPal,456 Oak Ave,Delivered,0.00,3.60,93.59
+ORD-003,2024-01-20,CUST-003,Mike Davis,PROD-003,Organic Face Cream,3,24.99,74.97,Credit Card,789 Pine Rd,Shipped,7.50,3.00,70.47
+ORD-004,2024-01-22,CUST-001,John Smith,PROD-004,Leather Wallet,1,39.99,39.99,Credit Card,123 Main St,Delivered,0.00,1.60,41.59
+ORD-005,2024-01-25,CUST-004,Emily Wilson,PROD-005,Wireless Headphones,1,129.99,129.99,PayPal,321 Elm St,Processing,13.00,5.20,122.19
+ORD-006,2024-01-28,CUST-002,Sarah Johnson,PROD-006,Yoga Mat,1,34.99,34.99,Credit Card,456 Oak Ave,Delivered,3.50,1.40,32.89
+ORD-007,2024-02-01,CUST-005,David Brown,PROD-007,Coffee Maker,1,79.99,79.99,Credit Card,654 Maple Dr,Shipped,8.00,3.20,75.19
+ORD-008,2024-02-05,CUST-003,Mike Davis,PROD-008,Phone Case,2,19.99,39.98,PayPal,789 Pine Rd,Delivered,4.00,1.60,37.58
+ORD-009,2024-02-08,CUST-006,Lisa Garcia,PROD-009,Plant Pot,3,14.99,44.97,Credit Card,987 Cedar Ln,Processing,4.50,1.80,42.27
+ORD-010,2024-02-12,CUST-004,Emily Wilson,PROD-010,Notebook Set,5,12.99,64.95,PayPal,321 Elm St,Shipped,6.50,2.60,60.85
+ORD-011,2024-02-15,CUST-001,John Smith,PROD-002,Smart Fitness Band,1,89.99,89.99,Credit Card,123 Main St,Processing,9.00,3.60,84.59
+ORD-012,2024-02-18,CUST-007,Tom Anderson,PROD-001,Premium Cotton T-Shirt,1,29.99,29.99,Credit Card,147 Birch Way,Delivered,3.00,1.20,28.19
+ORD-013,2024-02-20,CUST-002,Sarah Johnson,PROD-003,Organic Face Cream,2,24.99,49.98,PayPal,456 Oak Ave,Shipped,5.00,2.00,46.98
+ORD-014,2024-02-22,CUST-008,Anna Martinez,PROD-005,Wireless Headphones,1,129.99,129.99,Credit Card,258 Spruce St,Processing,13.00,5.20,122.19
+ORD-015,2024-02-25,CUST-005,David Brown,PROD-006,Yoga Mat,1,34.99,34.99,PayPal,654 Maple Dr,Delivered,3.50,1.40,32.89
+ORD-016,2024-02-28,CUST-009,Chris Lee,PROD-007,Coffee Maker,1,79.99,79.99,Credit Card,369 Willow Ave,Shipped,8.00,3.20,75.19
+ORD-017,2024-03-01,CUST-010,Rachel Kim,PROD-008,Phone Case,1,19.99,19.99,Credit Card,741 Poplar Rd,Processing,2.00,0.80,18.79
+ORD-018,2024-03-05,CUST-006,Lisa Garcia,PROD-009,Plant Pot,2,14.99,29.98,PayPal,987 Cedar Ln,Delivered,3.00,1.20,28.18
+ORD-019,2024-03-08,CUST-011,Mark Taylor,PROD-010,Notebook Set,3,12.99,38.97,Credit Card,852 Ash Blvd,Shipped,3.90,1.56,36.51
+ORD-020,2024-03-12,CUST-012,Jessica White,PROD-001,Premium Cotton T-Shirt,1,29.99,29.99,Credit Card,963 Pine St,Processing,3.00,1.20,28.19
